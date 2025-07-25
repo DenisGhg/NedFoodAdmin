@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 
 
 class AppColors {
+  static Color darkModePrimaryColor = Color.fromARGB(255, 25, 42, 86);
+  static Color lightModePrimaryColor = Color.fromARGB(255, 182, 220, 246);
   static Color blueColor = const Color.fromARGB(255, 33, 150, 243);
   static Color redColor = const Color.fromARGB(255, 244, 67, 54);
   static Color greenColor = const Color.fromARGB(255, 76, 175, 80);
@@ -17,13 +19,20 @@ class AppColors {
   // La couleur primaire basée sur le mode sombre/claire
   static Color primaryColor(BuildContext context) {
     bool isDarkMode = context.read<ThemeProvider>().isDarkMode;
-    return isDarkMode ? whiteColor : blackColor;
+    return isDarkMode ? darkModePrimaryColor : lightModePrimaryColor;
   }
 
   // La couleur primaire basée sur le mode sombre/claire
   static Color themeColor(BuildContext context) {
     bool isDarkMode = context.read<ThemeProvider>().isDarkMode;
     return isDarkMode ? blackColor : whiteColor;
+  }
+
+  // Contraire thème
+  // La couleur primaire basée sur le mode sombre/claire
+  static Color themeColorInverse(BuildContext context) {
+    bool isDarkMode = context.read<ThemeProvider>().isDarkMode;
+    return isDarkMode ?  whiteColor : blackColor;
   }
 
   static Color getNotificationColor(bool isRead, BuildContext context) {

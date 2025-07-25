@@ -12,7 +12,7 @@ class AppTheme {
       bodyMedium: TextStyle(color: Colors.black),
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor:  Color.fromARGB(255, 214, 210, 210),
+      backgroundColor:  Color.fromARGB(255, 182, 220, 246),
       foregroundColor: Colors.black,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -31,7 +31,7 @@ class AppTheme {
       bodyMedium: TextStyle(color: Colors.white),
     ),
     appBarTheme: const AppBarTheme(
-      backgroundColor:  Color.fromARGB(255, 32, 28, 28),
+      backgroundColor:  Color.fromARGB(255, 25, 42, 86),
       foregroundColor: Colors.white,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -39,3 +39,4 @@ class AppTheme {
     )
   );
 }
+

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       themeMode: context.watch<ThemeProvider>().themeMode,
       routes: routes,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.AHOMEPAGE,
+      initialRoute: AppRoutes.AMAINPAGE,
     );
   }
 }

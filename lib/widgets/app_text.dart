@@ -33,7 +33,7 @@ class AppText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color? defaultColor = Theme.of(context).colorScheme.inversePrimary;
+    //Color? defaultColor = Theme.of(context).colorScheme.inversePrimary;
 
     return Text(
       textAlign: textAlign,
@@ -43,7 +43,7 @@ class AppText extends StatelessWidget {
           fontSize: fontSize ?? context.mediumText * 0.9,
           fontWeight: fontWeight,
           fontFamily: fontFamily,
-          color: color ?? defaultColor,
+          color: color ,
           overflow: overflow ?? TextOverflow.ellipsis,
           fontStyle: fontStyle,
           decoration: decoration,
