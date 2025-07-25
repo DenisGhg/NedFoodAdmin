@@ -1,6 +1,7 @@
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:awesome_bottom_bar/widgets/inspired/inspired.dart';
 import 'package:flutter/material.dart';
+import 'package:ned_food_admin/constants/routes.dart';
 import 'package:ned_food_admin/views/pages/a_homepage.dart';
 import 'package:ned_food_admin/views/sizes/text_sizes.dart';
 import 'package:ned_food_admin/widgets/app_text.dart';
@@ -76,9 +77,15 @@ class _AMainPageState extends State<AMainPage> {
             });
           },
           itemBuilder: (BuildContext context, int index) {
-            return _pages[index];
+            return _pages[selectedIndex];
           },
         ),
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()=> Navigator.pushNamed(context, AppRoutes.ADDOREDITMENUPAGE),
+        backgroundColor: AppColors.primaryColor(context),
+        child: Icon(Icons.add),
       ),
 
       ///BottomBar

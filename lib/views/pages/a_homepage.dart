@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:ned_food_admin/views/colors/app_colors.dart';
+import 'package:ned_food_admin/views/models_ui/body_with_border_top_radius.dart';
 import 'package:ned_food_admin/views/sizes/app_sizes.dart';
 import 'package:ned_food_admin/views/sizes/text_sizes.dart';
 import 'package:ned_food_admin/widgets/app_text.dart';
+
+import '../../constants/routes.dart';
 
 class AHomepage extends StatefulWidget {
   const AHomepage({super.key});
@@ -16,55 +19,32 @@ class _AHomepageState extends State<AHomepage> {
 
   //Liste de Menus avec MenuCard
   final List<MenuCard> _menus = [
-    MenuCard(title: 'Produits', icon: Icons.store, routeName: null,),
-    MenuCard(title: 'Statistiques', icon: Icons.bar_chart, routeName: null,),
-    MenuCard(title: 'Commandes', icon: Icons.list_alt, routeName: null,),
-    MenuCard(title: 'Historique', icon: Icons.history, routeName: null,),
+    MenuCard(title: 'Produits', icon: Icons.store, routeName: AppRoutes.MENUMAINPAGE,),
+    MenuCard(title: 'Statistiques', icon: Icons.bar_chart, routeName: AppRoutes.MENUMAINPAGE,),
+    MenuCard(title: 'Commandes', icon: Icons.list_alt, routeName: AppRoutes.MENUMAINPAGE,),
+    MenuCard(title: 'Historique', icon: Icons.history, routeName: AppRoutes.MENUMAINPAGE,),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       ///Body
-      body: Stack(
-        children: [
-          Container(
-            height: context.screenHeight,
-            width: context.screenWidth,
-            color: Theme.of(context).appBarTheme.backgroundColor,
-          ),
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Container(
-              padding: EdgeInsets.all(context.defaultPagePadding),
-              decoration: BoxDecoration(
-                color: AppColors.themeColor(context),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(context.referenceSize * 3),
-                  topRight: Radius.circular(context.referenceSize * 3),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const StatsCarousel(),
-                  SizedBox(height: context.defaultSpacing),
-                  Expanded(
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
-                      children: _menus,
-                    ),
-                  ),
-                ],
+      body: BodyWithBorderTopRadius(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const StatsCarousel(),
+            SizedBox(height: context.defaultSpacing),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                children: _menus,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -109,7 +89,7 @@ class StatCard extends StatelessWidget {
 class MenuCard extends StatelessWidget {
   final String title;
   final IconData icon;
-  final Function()? routeName;
+  final String routeName;
 
   const MenuCard({super.key, required this.title, required this.icon, required this.routeName});
 
@@ -117,7 +97,7 @@ class MenuCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        routeName;
+        Navigator.pushNamed(context, routeName);
       },
       child: Container(
         padding: EdgeInsets.all(context.defaultPagePadding),
