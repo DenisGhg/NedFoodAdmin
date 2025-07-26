@@ -19,10 +19,10 @@ class _AHomepageState extends State<AHomepage> {
 
   //Liste de Menus avec MenuCard
   final List<MenuCard> _menus = [
-    MenuCard(title: 'Produits', icon: Icons.store, routeName: AppRoutes.MENUMAINPAGE,),
+    MenuCard(title: 'Menus', icon: Icons.store, routeName: AppRoutes.MENUMAINPAGE,),
     MenuCard(title: 'Statistiques', icon: Icons.bar_chart, routeName: AppRoutes.MENUMAINPAGE,),
-    MenuCard(title: 'Commandes', icon: Icons.list_alt, routeName: AppRoutes.MENUMAINPAGE,),
-    MenuCard(title: 'Historique', icon: Icons.history, routeName: AppRoutes.MENUMAINPAGE,),
+    MenuCard(title: 'Commandes', icon: Icons.list_alt, routeName: AppRoutes.ORDERHISTORYPAGE,),
+    MenuCard(title: 'Historique', icon: Icons.history, routeName: AppRoutes.MENUMAINPAGE),
   ];
 
   @override
@@ -45,6 +45,13 @@ class _AHomepageState extends State<AHomepage> {
             ),
           ],
         ),
+      ),
+
+      //Bouton d'ajout de menu
+      floatingActionButton: FloatingActionButton(
+        onPressed: ()=> Navigator.pushNamed(context, AppRoutes.ADDOREDITMENUPAGE),
+        backgroundColor: AppColors.primaryColor(context),
+        child: Icon(Icons.add),
       ),
     );
   }

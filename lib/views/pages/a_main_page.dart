@@ -82,11 +82,6 @@ class _AMainPageState extends State<AMainPage> {
         ),
       ),
 
-      floatingActionButton: FloatingActionButton(
-        onPressed: ()=> Navigator.pushNamed(context, AppRoutes.ADDOREDITMENUPAGE),
-        backgroundColor: AppColors.primaryColor(context),
-        child: Icon(Icons.add),
-      ),
 
       ///BottomBar
       bottomNavigationBar: BottomBarInspiredOutside(
