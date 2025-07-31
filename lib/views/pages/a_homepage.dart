@@ -22,7 +22,7 @@ class _AHomepageState extends State<AHomepage> {
     MenuCard(title: 'Menus', icon: Icons.store, routeName: AppRoutes.MENUMAINPAGE,),
     MenuCard(title: 'Statistiques', icon: Icons.bar_chart, routeName: AppRoutes.STATPAGE,),
     MenuCard(title: 'Commandes', icon: Icons.list_alt, routeName: AppRoutes.ORDERHISTORYPAGE,),
-    MenuCard(title: 'Historique', icon: Icons.history, routeName: AppRoutes.MENUMAINPAGE),
+    MenuCard(title: 'Historique', icon: Icons.history, routeName: AppRoutes.TRANSACTIONHISTORYPAGE),
   ];
 
   @override
