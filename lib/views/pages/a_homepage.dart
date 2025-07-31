@@ -20,7 +20,7 @@ class _AHomepageState extends State<AHomepage> {
   //Liste de Menus avec MenuCard
   final List<MenuCard> _menus = [
     MenuCard(title: 'Menus', icon: Icons.store, routeName: AppRoutes.MENUMAINPAGE,),
-    MenuCard(title: 'Statistiques', icon: Icons.bar_chart, routeName: AppRoutes.MENUMAINPAGE,),
+    MenuCard(title: 'Statistiques', icon: Icons.bar_chart, routeName: AppRoutes.STATPAGE,),
     MenuCard(title: 'Commandes', icon: Icons.list_alt, routeName: AppRoutes.ORDERHISTORYPAGE,),
     MenuCard(title: 'Historique', icon: Icons.history, routeName: AppRoutes.MENUMAINPAGE),
   ];
