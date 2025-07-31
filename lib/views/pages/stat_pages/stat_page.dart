@@ -51,6 +51,15 @@ class StatPage extends StatelessWidget {
       appBar: AppBar(
         title: AppText(text: "Statistiques", fontWeight: FontWeight.bold, fontSize: context.largeText,),
         centerTitle: true,
+        actions: [
+          PopupMenuButton(
+            itemBuilder: (context) =>[
+              PopupMenuItem(child: AppText(text: "Aujourd'hui")),
+              PopupMenuItem(child: AppText(text: 'Cette semaine')),
+              PopupMenuItem(child: AppText(text: 'Ce mois')),
+            ],
+          ),
+        ],
       ),
       body: BodyWithBorderTopRadius(
         child: SingleChildScrollView(
